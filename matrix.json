@@ -1,0 +1,262 @@
+{
+    "runtime": {
+        "8": [
+            {
+                "name": "amazoncorretto",
+                "image": "amazoncorretto:8"
+            },
+            {
+                "name": "ibmjava",
+                "image": "ibmjava:8"
+            },
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:8-jre"
+            },
+            {
+                "name": "adoptopenjdk",
+                "image": "adoptopenjdk/openjdk8:jre"
+            },
+            {
+                "name": "ibm-semeru-runtimes",
+                "image": "ibm-semeru-runtimes:open-8-jre-focal"
+            },
+            {
+                "name": "chiselled-jre",
+                "image": "ubuntu/chiselled-jre:8-22.04_edge"
+            }
+        ],
+        "11": [
+            {
+                "name": "amazoncorretto",
+                "image": "amazoncorretto:11"
+            },
+            {
+                "name": "sapmachine",
+                "image": "sapmachine:11"
+            },
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:11-jre"
+            },
+            {
+                "name": "adoptopenjdk",
+                "image": "adoptopenjdk/openjdk11:jre"
+            },
+            {
+                "name": "ibm-semeru-runtimes",
+                "image": "ibm-semeru-runtimes:open-11-jre-focal"
+            }
+        ],
+        "16": [
+            {
+                "name": "ibm-semeru-runtimes",
+                "image": "ibm-semeru-runtimes:open-16-jre-focal"
+            }
+        ],
+        "17": [
+            {
+                "name": "amazoncorretto",
+                "image": "amazoncorretto:17"
+            },
+            {
+                "name": "sapmachine",
+                "image": "sapmachine:17"
+            },
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:17-jre"
+            },
+            {
+                "name": "ibm-semeru-runtimes",
+                "image": "ibm-semeru-runtimes:open-17-jre-focal"
+            }
+        ],
+        "18": [
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:18-jre"
+            },
+            {
+                "name": "ibm-semeru-runtimes",
+                "image": "ibm-semeru-runtimes:open-18-jre-focal"
+            }
+        ],
+        "19": [
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:19-jre"
+            }
+        ],
+        "20": [
+            {
+                "name": "amazoncorretto",
+                "image": "amazoncorretto:20"
+            },
+            {
+                "name": "sapmachine",
+                "image": "sapmachine:20"
+            },
+            {
+                "name": "eclipse-temurin",
+                "image": "eclipse-temurin:20-jre"
+            }
+        ]
+    },
+    "server": {
+        "vanilla": [
+            {
+                "version": "1.19.4",
+                "source": "https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar",
+                "artifact": "server.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.18.2",
+                "source": "https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar",
+                "artifact": "server.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.17.1",
+                "source": "https://launcher.mojang.com/v1/objects/7a1f5e8f8f3463d583ef367638b7b06d5f6acbec/server.jar",
+                "artifact": "server.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.16.5",
+                "source": "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar",
+                "artifact": "server.jar",
+                "java": "8"
+            },
+            {
+                "version": "1.15.2",
+                "source": "https://launcher.mojang.com/v1/objects/4d1826eebac84847c71a77f9349cc22afd0cf0a1/server.jar",
+                "artifact": "server.jar",
+                "java": "8"
+            },
+            {
+                "version": "1.14.4",
+                "source": "https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar",
+                "artifact": "server.jar",
+                "java": "8"
+            }
+        ],
+        "bukkit": [
+            {
+                "version": "1.19.4",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.19.4.jar",
+                "artifact": "craftbukkit-1.19.4.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.18.2",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.18.2.jar",
+                "artifact": "craftbukkit-1.18.2.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.17.1",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.17.1.jar",
+                "artifact": "craftbukkit-1.17.1.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.16.5",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.16.5.jar",
+                "artifact": "craftbukkit-1.16.5.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.15.2",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar",
+                "artifact": "craftbukkit-1.15.2.jar",
+                "java": "11"
+            },
+            {
+                "version": "1.14.4",
+                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.14.4.jar",
+                "artifact": "craftbukkit-1.14.4.jar",
+                "java": "11"
+            }
+        ],
+        "spigot": [
+            {
+                "version": "1.19.4",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.19.4.jar",
+                "artifact": "spigot-1.19.4.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.18.2",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.18.2.jar",
+                "artifact": "spigot-1.18.2.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.17.1",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.17.1.jar",
+                "artifact": "spigot-1.17.1.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.16.5",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.16.5.jar",
+                "artifact": "spigot-1.16.5.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.15.2",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.15.2.jar",
+                "artifact": "spigot-1.15.2.jar",
+                "java": "11"
+            },
+            {
+                "version": "1.14.4",
+                "source": "https://download.getbukkit.org/spigot/spigot-1.14.4.jar",
+                "artifact": "spigot-1.14.4.jar",
+                "java": "11"
+            }
+        ],
+        "paper": [
+            {
+                "version": "1.19.4",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/521/downloads/paper-1.19.4-521.jar",
+                "artifact": "paper-1.19.4-521.jar",
+                "java": "17"
+            }
+            ,
+            {
+                "version": "1.18.2",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.19.4-388.jar",
+                "artifact": "paper-1.19.4-388.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.17.1",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.19.4-411.jar",
+                "artifact": "paper-1.19.4-411.jar",
+                "java": "17"
+            },
+            {
+                "version": "1.16.5",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.19.4-794.jar",
+                "artifact": "paper-1.19.4-794.jar",
+                "java": "16"
+            },
+            {
+                "version": "1.15.2",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.15.2/builds/393/downloads/paper-1.19.4-393.jar",
+                "artifact": "paper-1.19.4-393.jar",
+                "java": "11"
+            },
+            {
+                "version": "1.14.4",
+                "source": "https://api.papermc.io/v2/projects/paper/versions/1.14.4/builds/245/downloads/paper-1.19.4-245.jar",
+                "artifact": "paper-1.19.4-245.jar",
+                "java": "11"
+            }
+        ],
+        "folio": {}
+    }
+}
