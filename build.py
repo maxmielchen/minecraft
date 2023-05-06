@@ -63,6 +63,8 @@ def main():
                         }
                     )
 
+                    print(logs)
+
                     print(f"Successfully build -> minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
 
                     builded_image.tag(registry="ghcr.io", repository="maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
