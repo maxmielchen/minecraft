@@ -1,10 +1,10 @@
-ARG source
+ARG http_source
 ARG artifact
 ARG image
 
 FROM ubuntu:latest AS source
 RUN apt update && apt install wget -y
-RUN wget ${source} && mv ${artifact} server.jar
+RUN wget ${http_source} && mv ${artifact} server.jar
 
 FROM ${image}
 ENV XMS=2G
