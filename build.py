@@ -55,7 +55,7 @@ def main():
                         tag=f"minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}",
                         nocache=True,
                         buildargs={
-                            'source': server_source,
+                            'http_source': server_source,
                             'artifact': server_artifact,
                             'image': image
                         }
