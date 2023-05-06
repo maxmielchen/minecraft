@@ -13,5 +13,5 @@ COPY --from=source /server.jar /
 COPY eula.txt /data/
 WORKDIR /data
 VOLUME [ "/data" ]
-EXPOSE 25565/udp
+EXPOSE 25565/tcp
 CMD java -Xms$XMS -Xmx$XMX -jar /server.jar --nogui --port 25565
