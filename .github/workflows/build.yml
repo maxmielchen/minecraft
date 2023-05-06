@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: kartoffeldocker
     permissions:
       contents: read
       packages: write
