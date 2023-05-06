@@ -25,14 +25,12 @@ def main():
             docker_info = docker_client.info()
             docker_ping = docker_client.ping()
             print(" --Docker-- ")
-            print(f"Info: {docker_info}")
             print(f"Version: {docker_version}")
-            print(f"Ping: {docker_ping}")
-            print(docker_ping)
             print(" --Docker-- ")
         except Exception:
             print("\033[91mCOULD NOT CONNECT TO DOCKER!")
             exit(1)
+
 
         server_type_list = data["server"]
         for server_type_key, server_type_value in tqdm(server_type_list.items()):
