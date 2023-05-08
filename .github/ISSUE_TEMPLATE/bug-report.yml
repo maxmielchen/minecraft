@@ -8,23 +8,23 @@ body:
   id: image
   attributes:
     label: The Minecraft server image
-    description: "The image of the Minecraft server"
+    description: "The image of the Minecraft server."
     placeholder: "vanilla-1.16.5-ibm-semeru-runtimes-8-latest"
   validations:
     required: true
    
-- type: input
+- type: markdown
   id: produce
   attributes:
     label: Reproduce bug
-    description: "How we can reproduce the bug"
+    description: "How we can reproduce the bug."
   validations:
     required: true
     
-- type: input
+- type: markdown
   id: solution
   attributes:
     label: Solution
-    description: "A possible solution"
+    description: "A possible solution."
   validations:
     required: false
