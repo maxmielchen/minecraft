@@ -1,2 +1,2 @@
-# minecraft
+# Minecraft
 Containerized Minecraft server
