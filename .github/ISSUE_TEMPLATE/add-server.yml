@@ -21,3 +21,10 @@ body:
     placeholder: "https://papermc.io/software/folia"
   validations:
     required: true
+    
+- type: textarea
+  id: why
+  attributes:
+    label: Why we should add it?
+  validations:
+    required: true
