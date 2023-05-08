@@ -1,15 +1,12 @@
 ARG image
-FROM ubuntu:latest AS source
 ARG http_source
 ARG artifact
-ENV http_source=${http_source}
-ENV artifact=${artifact}
-RUN apt update && apt install wget -y
-RUN wget $http_source && mv $artifact server.jar
+
 FROM ${image}
 ENV XMS=2G
 ENV XMX=2G
 COPY --from=source /server.jar /
+ADD $http_source /server.jar
 COPY eula.txt /data/
 WORKDIR /data
 VOLUME [ "/data" ]
