@@ -1,6 +1,6 @@
-name: Add JRE
-about: Adding a Java runtime.
+name: Adding a Java runtime
 title: '[JRE] jre name'
+description: Request to add a java runtime
 labels: enhancement
 body:
 
