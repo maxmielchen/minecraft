@@ -1,0 +1,27 @@
+name: Add JRE
+about: Adding a Java runtime.
+title: '[JRE] jre name'
+labels: enhancement
+body:
+
+- type: input
+  id: name
+  attributes:
+    label: JRE Name
+    description: "The name of the java runtime."
+    placeholder: "openjdk"
+  validations:
+    required: true
+
+- type: input
+  id: image
+  attributes:
+    label: Dockerimage
+    description: "The docker image of the java runtime."
+    placeholder: "openjdk"
+  validations:
+    required: true
+
+
+
+
