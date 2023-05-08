@@ -43,7 +43,9 @@ def main():
                 server_source = server["source"]
                 #server_artifact = server["artifact"]
                 java = server["java"]
-                filtered_runtimes = [(v, r) for (v, r) in runtimes if v >= java]
+
+                #filtered_runtimes = [(v, r) for (v, r) in runtimes if v >= java] # Does not work
+
 
                 for runtime_version, runtime_properties in filtered_runtimes:
                     runtime_name = runtime_properties["name"]
