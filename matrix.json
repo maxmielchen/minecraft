@@ -119,7 +119,7 @@
             },
             {
                 "version": "1.17.1",
-                "source": "https://launcher.mojang.com/v1/objects/7a1f5e8f8f3463d583ef367638b7b06d5f6acbec/server.jar",
+                "source": "https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar",
                 "artifact": "server.jar",
                 "java": "16"
             },

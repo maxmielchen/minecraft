@@ -41,7 +41,7 @@ def main():
             for server in server_list:
                 server_version = server["version"]
                 server_source = server["source"]
-                server_artifact = server["artifact"]
+                #server_artifact = server["artifact"]
                 java = server["java"]
                 filtered_runtimes = [(v, r) for (v, r) in runtimes if v >= java]
 
