@@ -197,12 +197,12 @@
             },
             {
                 "version": "1.15.2",
-                "source": "https://download.getbukkit.org/spigot/spigot-1.15.2.jar",
+                "source": "https://cdn.getbukkit.org/spigot/spigot-1.15.2.jar",
                 "java": 11
             },
             {
                 "version": "1.14.4",
-                "source": "https://download.getbukkit.org/spigot/spigot-1.14.4.jar",
+                "source": "https://cdn.getbukkit.org/spigot/spigot-1.14.4.jar",
                 "java": 11
             }
         ],
