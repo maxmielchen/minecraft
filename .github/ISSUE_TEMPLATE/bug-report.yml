@@ -13,7 +13,7 @@ body:
   validations:
     required: true
    
-- type: markdown
+- type: textarea
   id: produce
   attributes:
     label: Reproduce bug
@@ -21,7 +21,7 @@ body:
   validations:
     required: true
     
-- type: markdown
+- type: textarea
   id: solution
   attributes:
     label: Solution
