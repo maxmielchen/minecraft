@@ -12,7 +12,7 @@ def main():
         runtimes = []
         print("Load runtimes...")
         for runtime_version_key, runtime_version_value in runtime_version_list.items():
-            version = runtime_version_key
+            version = int(runtime_version_key)
             runtimes_list = runtime_version_value
             for runtime in runtimes_list:
                 runtimes.append((version, runtime))
