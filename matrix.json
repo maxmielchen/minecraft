@@ -146,37 +146,31 @@
             {
                 "version": "1.19.4",
                 "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.19.4.jar",
-                "artifact": "craftbukkit-1.19.4.jar",
                 "java": "17"
             },
             {
                 "version": "1.18.2",
                 "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.18.2.jar",
-                "artifact": "craftbukkit-1.18.2.jar",
                 "java": "17"
             },
             {
                 "version": "1.17.1",
                 "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.17.1.jar",
-                "artifact": "craftbukkit-1.17.1.jar",
                 "java": "17"
             },
             {
                 "version": "1.16.5",
                 "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.5.jar",
-                "artifact": "craftbukkit-1.16.5.jar",
                 "java": "16"
             },
             {
                 "version": "1.15.2",
                 "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar",
-                "artifact": "craftbukkit-1.15.2.jar",
                 "java": "11"
             },
             {
                 "version": "1.14.4",
                 "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.4.jar",
-                "artifact": "craftbukkit-1.14.4.jar",
                 "java": "11"
             }
         ],
@@ -184,37 +178,31 @@
             {
                 "version": "1.19.4",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.19.4.jar",
-                "artifact": "spigot-1.19.4.jar",
                 "java": "17"
             },
             {
                 "version": "1.18.2",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.18.2.jar",
-                "artifact": "spigot-1.18.2.jar",
                 "java": "17"
             },
             {
                 "version": "1.17.1",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.17.1.jar",
-                "artifact": "spigot-1.17.1.jar",
                 "java": "17"
             },
             {
                 "version": "1.16.5",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.16.5.jar",
-                "artifact": "spigot-1.16.5.jar",
                 "java": "16"
             },
             {
                 "version": "1.15.2",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.15.2.jar",
-                "artifact": "spigot-1.15.2.jar",
                 "java": "11"
             },
             {
                 "version": "1.14.4",
                 "source": "https://download.getbukkit.org/spigot/spigot-1.14.4.jar",
-                "artifact": "spigot-1.14.4.jar",
                 "java": "11"
             }
         ],
@@ -222,41 +210,34 @@
             {
                 "version": "1.19.4",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.19.4/builds/521/downloads/paper-1.19.4-521.jar",
-                "artifact": "paper-1.19.4-521.jar",
                 "java": "17"
             }
             ,
             {
                 "version": "1.18.2",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.18.2/builds/388/downloads/paper-1.19.4-388.jar",
-                "artifact": "paper-1.19.4-388.jar",
                 "java": "17"
             },
             {
                 "version": "1.17.1",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.17.1/builds/411/downloads/paper-1.19.4-411.jar",
-                "artifact": "paper-1.19.4-411.jar",
                 "java": "17"
             },
             {
                 "version": "1.16.5",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.19.4-794.jar",
-                "artifact": "paper-1.19.4-794.jar",
                 "java": "16"
             },
             {
                 "version": "1.15.2",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.15.2/builds/393/downloads/paper-1.19.4-393.jar",
-                "artifact": "paper-1.19.4-393.jar",
                 "java": "11"
             },
             {
                 "version": "1.14.4",
                 "source": "https://api.papermc.io/v2/projects/paper/versions/1.14.4/builds/245/downloads/paper-1.19.4-245.jar",
-                "artifact": "paper-1.19.4-245.jar",
                 "java": "11"
             }
-        ],
-        "folio": {}
+        ]
     }
 }
