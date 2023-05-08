@@ -163,19 +163,19 @@
             },
             {
                 "version": "1.16.5",
-                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.16.5.jar",
+                "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.16.5.jar",
                 "artifact": "craftbukkit-1.16.5.jar",
                 "java": "16"
             },
             {
                 "version": "1.15.2",
-                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar",
+                "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.15.2.jar",
                 "artifact": "craftbukkit-1.15.2.jar",
                 "java": "11"
             },
             {
                 "version": "1.14.4",
-                "source": "https://download.getbukkit.org/craftbukkit/craftbukkit-1.14.4.jar",
+                "source": "https://cdn.getbukkit.org/craftbukkit/craftbukkit-1.14.4.jar",
                 "artifact": "craftbukkit-1.14.4.jar",
                 "java": "11"
             }
