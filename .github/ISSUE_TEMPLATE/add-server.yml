@@ -1,0 +1,23 @@
+name: Adding Minecraft server
+title: '[Server] server name'
+description: Request to add a Minecraft server
+labels: enhancement
+body:
+
+- type: input
+  id: name
+  attributes:
+    label: Minecraft server name
+    description: "The name of the Minecraft server."
+    placeholder: "folio"
+  validations:
+    required: true
+    
+- type: input
+  id: source
+  attributes:
+    label: Where did I get it?
+    description: "URL where I can get the server source."
+    placeholder: "https://papermc.io/software/folia"
+  validations:
+    required: true
