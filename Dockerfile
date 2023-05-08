@@ -5,7 +5,6 @@ ARG artifact
 FROM ${image}
 ENV XMS=2G
 ENV XMX=2G
-COPY --from=source /server.jar /
 ADD $http_source /server.jar
 COPY eula.txt /data/
 WORKDIR /data
