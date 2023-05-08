@@ -66,7 +66,7 @@ def main():
 
                     print(f"Successfully build -> minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
 
-                    builded_image.tag(registry="ghcr.io", repository="maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
+                    builded_image.tag(repository="ghcr.io/maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
                     docker_client.images.push(repository='ghcr.io/maxmielchen/minecraft', tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
 
                     print(f"Successfully pushed -> minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
