@@ -1,8 +1,6 @@
 ARG image
-ARG http_source
-ARG artifact
-
 FROM ${image}
+ARG http_source
 ENV XMS=2G
 ENV XMX=2G
 ADD $http_source /server.jar

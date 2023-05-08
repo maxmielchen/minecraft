@@ -58,7 +58,6 @@ def main():
                         nocache=True,
                         buildargs={
                             'http_source': server_source,
-                            'artifact': server_artifact,
                             'image': image
                         }
                     )
