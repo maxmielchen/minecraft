@@ -1,6 +1,7 @@
 import json
 import docker
 from tqdm import tqdm
+import os
 
 
 def main():
@@ -61,7 +62,6 @@ def main():
                     builded_image, logs = docker_client.images.build(
                         dockerfile="./Dockerfile",
                         path=".",
-                        tag=f"minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}",
                         nocache=True,
                         buildargs={
                             'http_source': server_source,
@@ -73,8 +73,11 @@ def main():
 
                     print(f"Successfully build -> minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
 
-                    builded_image.tag(repository="ghcr.io/maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
-                    docker_client.images.push(repository='ghcr.io/maxmielchen/minecraft', tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
+
+                    builded_image.tag(repository="ghcr.io/maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}-latest")
+                    release = os.getenv("RELEASE_VERSION")
+                    builded_image.tag(repository="ghcr.io/maxmielchen/minecraft", tag=f"{server_type_name}-{server_version}-{runtime_name}-{runtime_version}-{release}")
+                    docker_client.images.push(repository='ghcr.io/maxmielchen/minecraft')
 
                     print(f"Successfully pushed -> minecraft:{server_type_name}-{server_version}-{runtime_name}-{runtime_version}")
 
