@@ -22,8 +22,8 @@ class Runtime:
     
     def info(self) -> str:
         return f"""
-        #  - {self.get_name} -
-        # Java: {self.get_java_version}
+        #  - {self.get_name()} -
+        # Java: {self.get_java_version()}
         """
     
 class RuntimePool:
@@ -37,7 +37,7 @@ class RuntimePool:
     def filtered_pool(self, min_java_version: int) -> List[Runtime]:
         filtered_list = List[Runtime]
         for runtime in self.runtimes:
-            if runtime.get_java_version >= min_java_version:
+            if runtime.get_java_version() >= min_java_version:
                 filtered_list.append(runtime)
         return filtered_list
 
