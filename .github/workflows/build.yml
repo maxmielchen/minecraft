@@ -48,7 +48,7 @@ jobs:
       - name: Build server containers
         working-directory: ./server
         run: |
-          python build.py
+          python main.py
 
       - name: Cleanup containers
         uses: Chizkiyahu/delete-untagged-ghcr-action@v2
