@@ -4,8 +4,6 @@ import docker
 
 from objects import RuntimePool
 from objects import ServerPool
-from objects import Runtime
-from objects import Server
 from objects import Image
 from json import JSONDecoder
 
