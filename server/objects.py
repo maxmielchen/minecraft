@@ -30,7 +30,7 @@ class RuntimePool:
 
     def __init__(self, matrix_json: JSONDecoder):
         self.runtimes = [Runtime]
-        for json_java_version, json_runtime_images in matrix_json["runtimes"]:
+        for json_java_version, json_runtime_images in matrix_json["runtimes"].items():
             for json_runtime_image in json_runtime_images:
                 self.runtimes.append(Runtime(json_runtime_image["name"], json_runtime_image["image"], int(json_java_version)))
 
@@ -74,7 +74,7 @@ class ServerPool:
 
     def __init__(self, matrix_json: JSONDecoder):
         self.servers = [Server]
-        for json_server_name, json_servers in matrix_json["servers"]:
+        for json_server_name, json_servers in matrix_json["servers"].items():
             for json_server in json_servers:
                 self.servers.append(Server(json_server_name, json_server["version"], json_server["source"], json_server["java"]))
 
