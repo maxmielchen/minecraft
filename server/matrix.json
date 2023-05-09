@@ -1,5 +1,5 @@
 {
-    "runtime": {
+    "runtimes": {
         "8": [
             {
                 "name": "amazoncorretto",
@@ -103,7 +103,7 @@
             }
         ]
     },
-    "server": {
+    "servers": {
         "vanilla": [
             {
                 "version": "1.19.4",
