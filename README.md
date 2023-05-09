@@ -62,3 +62,10 @@ First you should choose which server you want:
 - [paper](docs/paper.md)
 
 Then you can look in the table whether your server version exists in combination with the runtime and whether it works.
+
+## Agree EULA
+
+The eula is in the data folder of your container: /data
+You can also find other files there, such as the plugins folder and worlds.
+ 
+> :warning: The server runtime cannot be found in this folder and is also discouraged from exchanging it
