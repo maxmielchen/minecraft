@@ -8,7 +8,7 @@ from lib.runtimepool import RuntimePool
 from lib.server import Server
 from lib.serverpool import ServerPool
 
-from multiprocessing import Process
+from threading import Thread
 
 if __name__ == '__main__':
     with open("matrix.json") as matrix:
@@ -20,20 +20,20 @@ if __name__ == '__main__':
 
         for server in servers.servers:
             # TEST
-            for runtime in runtimes.filtered_pool(20):
+            for runtime in runtimes.filtered_pool(Server.get_java_version(server)):
                 images.append(Image(server, runtime))
 
         docker_client = docker_env()
 
-        processes = []
+        threads = []
 
         for image in images:
-            processes.append(
-                Process(target=(Image.build(image, docker_client, True)))
+            threads.append(
+                Thread(target=(Image.build(image, docker_client, True)))
             )
 
-        for process in processes:
-            process.start()
+        for thread in threads:
+            thread.start()
 
-        for process in processes:
-            process.join()
+        for thread in threads:
+            thread.join()
