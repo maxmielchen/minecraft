@@ -19,7 +19,7 @@ if __name__ == '__main__':
         images = [Image]
 
         for server in servers.servers:
-            for runtime in runtimes.filtered_pool(Server.get_java_version(server)):
+            for runtime in RuntimePool.filtered_pool(runtimes, Server.get_java_version(server)):
                 images.append(Image(server, runtime))
 
         docker_client = docker.from_env()
