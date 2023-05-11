@@ -4,6 +4,7 @@ import docker
 
 from objects import RuntimePool
 from objects import ServerPool
+from objects import Server
 from objects import Image
 from json import JSONDecoder
 
@@ -18,7 +19,7 @@ if __name__ == '__main__':
         images = [Image]
 
         for server in servers.servers:
-            for runtime in runtimes.filtered_pool(server.get_java_version):
+            for runtime in runtimes.filtered_pool(Server.get_java_version(server)):
                 images.append(Image(server, runtime))
 
         docker_client = docker.from_env()

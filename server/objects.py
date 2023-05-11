@@ -48,7 +48,6 @@ class RuntimePool:
         return self.runtimes
 
 class Server:
-
     server: str
     version: str
     source: str
@@ -95,7 +94,7 @@ class Image:
         self.runtime = runtime
 
     def build(self, docker_client: DockerClient, instant: bool = False):
-        builded_image, logs = docker_client.images.build(dockerfile="./Dockerfile",path=".",nocache=True,
+        builded_image, _ = docker_client.images.build(dockerfile="./Dockerfile",path=".",nocache=True,
             buildargs={
                 'http_source': self.server.source,
                 'image': self.runtime.image
