@@ -1,30 +1,31 @@
 
-import json
-import docker
+from json import JSONDecoder, load
+from docker import from_env as docker_env
 
-from objects import RuntimePool
-from objects import ServerPool
-from objects import Server
-from objects import Image
-from json import JSONDecoder
+from lib.image import Image
+from lib.runtime import Runtime
+from lib.runtimepool import RuntimePool
+from lib.server import Server
+from lib.serverpool import ServerPool
 
 from multiprocessing import Process
 
 if __name__ == '__main__':
     with open("matrix.json") as matrix:
-        data : JSONDecoder = json.load(matrix)
+        data : JSONDecoder = load(matrix)
         runtimes = RuntimePool(data)
         servers = ServerPool(data)
 
-        images = [Image]
+        images = []
 
         for server in servers.servers:
-            for runtime in RuntimePool.filtered_pool(runtimes, Server.get_java_version(server)):
+            # TEST
+            for runtime in runtimes.filtered_pool(20):
                 images.append(Image(server, runtime))
 
-        docker_client = docker.from_env()
+        docker_client = docker_env()
 
-        processes = [Process]
+        processes = []
 
         for image in images:
             processes.append(
