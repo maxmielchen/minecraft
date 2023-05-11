@@ -30,7 +30,7 @@ class Runtime:
         """
     
 class RuntimePool:
-    runtimes : List[Runtime]
+    runtimes = [Runtime]
 
     def __init__(self, matrix_json: JSONDecoder):
         for json_java_version, json_runtime_images in matrix_json["runtimes"].items():
