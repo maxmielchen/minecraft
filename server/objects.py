@@ -1,10 +1,13 @@
 from json import JSONDecoder
-from typing import Any, List
+from typing import List
 from docker import DockerClient
 import env as env
 
 
 class Runtime:
+    name: str
+    image: str
+    java_version: str
 
     def __init__(self, name: str, image: str, java_version: int):
         self.name = name
@@ -22,22 +25,22 @@ class Runtime:
     
     def info(self) -> str:
         return f"""
-        #  - {self.get_name()} -
-        # Java: {self.get_java_version()}
+        #  - {self.name} -
+        # Java: {self.java_version}
         """
     
 class RuntimePool:
+    runtimes : List[Runtime]
 
     def __init__(self, matrix_json: JSONDecoder):
-        self.runtimes = [Runtime]
         for json_java_version, json_runtime_images in matrix_json["runtimes"].items():
             for json_runtime_image in json_runtime_images:
                 self.runtimes.append(Runtime(json_runtime_image["name"], json_runtime_image["image"], int(json_java_version)))
 
     def filtered_pool(self, min_java_version: int) -> List[Runtime]:
-        filtered_list = List[Runtime]
+        filtered_list = [Runtime]
         for runtime in self.runtimes:
-            if (Runtime.get_java_version(runtime)) >= (min_java_version):
+            if (runtime.get_java_version()) >= (min_java_version):
                 filtered_list.append(runtime)
         return filtered_list
 
@@ -45,6 +48,11 @@ class RuntimePool:
         return self.runtimes
 
 class Server:
+
+    server: str
+    version: str
+    source: str
+    java_version: str
 
     def __init__(self, server: str, version: str, source: str, java_version: int):
         self.server = server
@@ -79,6 +87,8 @@ class ServerPool:
                 self.servers.append(Server(json_server_name, json_server["version"], json_server["source"], json_server["java"]))
 
 class Image:
+    server: Server
+    runtime: Runtime
 
     def __init__(self, server: Server, runtime: Runtime):
         self.server = server
@@ -93,8 +103,6 @@ class Image:
         )
         builded_image.tag(repository=f"{env.registry}/{env.repository}", tag=f"{self.server.server}-{self.server.version}-{self.runtime.name}-{self.runtime.java_version}-latest")
         builded_image.tag(repository=f"{env.registry}/{env.repository}", tag=f"{self.server.server}-{self.server.version}-{self.runtime.name}-{self.runtime.java_version}-{env.release_tag}")
-        self.image  = builded_image
-        self.logs = logs
 
         if instant:
             docker_client.images.push(repository=f"{env.registry}/{env.repository}")

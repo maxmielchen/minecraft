@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
         for image in images:
             processes.append(
-                Process(target=Image.build(image, docker_client, True))
+                Process(target=(Image.build(image, docker_client, True)))
             )
 
         for process in processes:
