@@ -51,7 +51,7 @@ class Server:
     server: str
     version: str
     source: str
-    java_version: str
+    java_version: int
 
     def __init__(self, server: str, version: str, source: str, java_version: int):
         self.server = server
@@ -69,7 +69,7 @@ class Server:
         return self.source
     
     def get_java_version(self) -> int:
-        return self.version
+        return self.java_version
     
     def info(self) -> str:
         return f"""
