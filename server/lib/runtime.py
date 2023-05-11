@@ -2,9 +2,9 @@
 class Runtime:
 
     def __init__(self, name: str, image: str, java_version: int):
-        self.name = name
-        self.image = image
-        self.java_version = java_version
+        self.name: str = name
+        self.image: str = image
+        self.java_version: int = java_version
 
     def get_name(self) -> str:
         return self.name

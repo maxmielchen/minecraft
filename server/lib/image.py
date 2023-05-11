@@ -8,8 +8,8 @@ class Image:
     base_environments = BaseEnvironments()
 
     def __init__(self, server: Server, runtime: Runtime):
-        self.server = server
-        self.runtime = runtime
+        self.server: Server = server
+        self.runtime: Server = runtime
 
     def build(self, docker_client: DockerClient, instant: bool = False):
         builded_image, _ = docker_client.images.build(dockerfile="./Dockerfile",path=".",nocache=True,

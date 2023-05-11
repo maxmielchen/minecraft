@@ -5,7 +5,7 @@ from typing import List
 class RuntimePool:
 
     def __init__(self, matrix_json: JSONDecoder):
-        self.runtimes = []
+        self.runtimes: List[Runtime] = []
         for json_java_version, json_runtime_images in matrix_json["runtimes"].items():
             for json_runtime_image in json_runtime_images:
                 self.runtimes.append(Runtime(json_runtime_image["name"], json_runtime_image["image"], int(json_java_version)))

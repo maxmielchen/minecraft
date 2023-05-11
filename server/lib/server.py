@@ -2,10 +2,10 @@
 class Server:
 
     def __init__(self, server: str, version: str, source: str, java_version: int):
-        self.server = server
-        self.version = version
-        self.source = source
-        self.java_version = java_version
+        self.server: str = server
+        self.version: str = version
+        self.source: str = source
+        self.java_version: int = java_version
 
     def get_server(self) -> str:
         return self.server

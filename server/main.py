@@ -1,5 +1,6 @@
 
 from json import JSONDecoder, load
+from typing import List
 from docker import from_env as docker_env
 
 from lib.image import Image
@@ -19,13 +20,12 @@ if __name__ == '__main__':
         images = []
 
         for server in servers.servers:
-            # TEST
-            for runtime in runtimes.filtered_pool(Server.get_java_version(server)):
+            for runtime in runtimes.filtered_pool(server.get_java_version()):
                 images.append(Image(server, runtime))
 
         docker_client = docker_env()
 
-        threads = []
+        threads: List[Thread] = []
 
         for image in images:
             threads.append(
