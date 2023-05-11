@@ -5,9 +5,6 @@ import env as env
 
 
 class Runtime:
-    name: str
-    image: str
-    java_version: str
 
     def __init__(self, name: str, image: str, java_version: int):
         self.name = name
@@ -30,9 +27,9 @@ class Runtime:
         """
     
 class RuntimePool:
-    runtimes = [Runtime]
 
     def __init__(self, matrix_json: JSONDecoder):
+        self.runtimes = [Runtime]
         for json_java_version, json_runtime_images in matrix_json["runtimes"].items():
             for json_runtime_image in json_runtime_images:
                 self.runtimes.append(Runtime(json_runtime_image["name"], json_runtime_image["image"], int(json_java_version)))
@@ -48,10 +45,6 @@ class RuntimePool:
         return self.runtimes
 
 class Server:
-    server: str
-    version: str
-    source: str
-    java_version: int
 
     def __init__(self, server: str, version: str, source: str, java_version: int):
         self.server = server
@@ -86,8 +79,6 @@ class ServerPool:
                 self.servers.append(Server(json_server_name, json_server["version"], json_server["source"], json_server["java"]))
 
 class Image:
-    server: Server
-    runtime: Runtime
 
     def __init__(self, server: Server, runtime: Runtime):
         self.server = server
