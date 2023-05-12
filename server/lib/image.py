@@ -12,7 +12,13 @@ class Image:
         self.runtime: Server = runtime
 
     def build(self, docker_client: DockerClient, instant: bool = False):
-        builded_image, _ = docker_client.images.build(dockerfile="./Dockerfile",path=".",nocache=True,
+        builded_image, _ = docker_client.images.build(
+            dockerfile="./Dockerfile",
+            path=".",
+            nocache=False,
+            cache_from=[
+                f"{self.base_environments.get_registry()}/{self.base_environments.get_repository()}:{self.server.server}-{self.server.version}-{self.runtime.name}-{self.runtime.java_version}-latest"
+            ],
             buildargs={
                 'http_source': self.server.source,
                 'image': self.runtime.image
