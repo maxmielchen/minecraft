@@ -36,16 +36,14 @@ if __name__ == '__main__':
 
         with Pool(processes=32) as pool:
 
-            pool.map_async(Thread.start, threads)
+            result = pool.map_async(Thread.start, threads)
 
-            pool.join()
+            result.wait()
 
             """
             results: List[AsyncResult] = []
             for thread in threads:
                 results.append(pool.apply_async(func=thread.start))
-
-            
 
             pool.close()
             pool.join()
