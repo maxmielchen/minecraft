@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
             result = pool.map_async(single_build, images)
 
-            result.wait()
+            result.get()
 
             """
             results: List[AsyncResult] = []
