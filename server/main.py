@@ -31,10 +31,9 @@ if __name__ == '__main__':
 
             single_build = lambda image: image.build(docker_client)
 
-            pool.imap(single_build, images)
+            result = pool.map_async(single_build, images)
 
-            pool.close()
-            pool.join()
+            result.wait()
 
             """
             results: List[AsyncResult] = []
