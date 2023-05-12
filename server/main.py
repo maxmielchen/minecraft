@@ -39,9 +39,7 @@ if __name__ == '__main__':
             for thread in threads:
                 results.append(pool.apply_async(func=thread.start))
 
-            for result in results:
-                result.wait()
-
+            pool.close()
             pool.join()
 
             Image.push(docker_client)
