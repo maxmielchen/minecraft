@@ -10,7 +10,7 @@ from lib.server import Server
 from lib.serverpool import ServerPool
 
 from threading import Thread
-from multiprocessing import Pool
+from multiprocessing import Pool, Semaphore
 from multiprocessing.pool import AsyncResult
 
 if __name__ == '__main__':
@@ -29,13 +29,26 @@ if __name__ == '__main__':
 
         with Pool(processes=16) as pool:
 
+            semaphore = Semaphore(0)
+
+            for image in images:
+                pool.apply_async(image.build, (docker_client,), callback=semaphore.release)
+
+            semaphore.acquire(block=True)
+
+            """
             single_build = lambda image: image.build(docker_client)
 
             result = pool.map_async(single_build, images)
+        
+            result.wait()
+            result.successful()
 
-            result.get()
+            pool.close()
+            pool.join()
 
-            """
+            ---
+            
             results: List[AsyncResult] = []
             for thread in threads:
                 results.append(pool.apply_async(func=thread.start))
@@ -44,4 +57,4 @@ if __name__ == '__main__':
             pool.join()
             """
 
-            Image.push(docker_client)
+        Image.push(docker_client)
