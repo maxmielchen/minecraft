@@ -27,18 +27,14 @@ if __name__ == '__main__':
 
         docker_client = docker_env()
 
-        threads: List[Thread] = []
+        with Pool(processes=16) as pool:
 
-        for image in images:
-            threads.append(
-                Thread(target=image.build, args=(docker_client,))
-            )
+            single_build = lambda image: image.build(docker_client)
 
-        with Pool(processes=32) as pool:
+            pool.imap(single_build, images)
 
-            result = pool.map_async(Thread.start, threads)
-
-            result.wait()
+            pool.close()
+            pool.join()
 
             """
             results: List[AsyncResult] = []
