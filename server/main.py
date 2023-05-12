@@ -37,7 +37,7 @@ if __name__ == '__main__':
         with Pool(processes=16) as pool:
             results: List[AsyncResult] = []
             for thread in threads:
-                results.append(pool.apply_async(thread.start))
+                results.append(pool.apply_async(target=thread.start))
 
             for result in results:
                 result.wait()
