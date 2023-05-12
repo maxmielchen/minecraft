@@ -31,7 +31,7 @@ if __name__ == '__main__':
 
         for image in images:
             threads.append(
-                Thread(target=(image.build(docker_client)))
+                Thread(target=image.build, args=(docker_client,))
             )
 
         with Pool(processes=16) as pool:
