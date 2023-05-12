@@ -34,12 +34,21 @@ if __name__ == '__main__':
                 Thread(target=image.build, args=(docker_client,))
             )
 
-        with Pool(processes=16) as pool:
+        with Pool(processes=32) as pool:
+
+            pool.map_async(Thread.start, threads)
+
+            pool.join()
+
+            """
             results: List[AsyncResult] = []
             for thread in threads:
                 results.append(pool.apply_async(func=thread.start))
 
+            
+
             pool.close()
             pool.join()
+            """
 
             Image.push(docker_client)
