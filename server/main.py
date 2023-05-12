@@ -42,4 +42,6 @@ if __name__ == '__main__':
             for result in results:
                 result.wait()
 
-            Image.push()
+            pool.join()
+
+            Image.push(docker_client)
