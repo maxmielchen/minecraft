@@ -29,3 +29,7 @@ class Image:
 
         if instant:
             docker_client.images.push(repository=f"{self.base_environments.get_registry()}/{self.base_environments.get_repository()}")
+
+    def push(docker_client: DockerClient):
+        base_environments = BaseEnvironments()
+        docker_client.images.push(repository=f"{base_environments.get_registry()}/{base_environments.get_repository()}")
