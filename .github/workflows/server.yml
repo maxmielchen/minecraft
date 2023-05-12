@@ -1,4 +1,4 @@
-name: Build and Push Docker images
+name: Build server containers
 
 on:
   release:
@@ -11,6 +11,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10080
     permissions:
       contents: read
       packages: write
@@ -31,24 +32,29 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
+      - name: Install Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.10'
 
       - name: Install dependencies
+        working-directory: ./server
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set RELEASE_VERSION
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-
-      - name: Build and push Docker image
+      - name: Update environtment variables
         run: |
-          python build.py
+          echo "RELEASE_TAG=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV 
+          echo "REPOSITORY=${GITHUB_REPOSITORY}" >> $GITHUB_ENV 
+          echo "REGISTRY=ghcr.io" >> $GITHUB_ENV 
 
-      - name: Delete untagged images
+      - name: Build server containers
+        working-directory: ./server
+        run: |
+          python main.py
+
+      - name: Cleanup containers
         uses: Chizkiyahu/delete-untagged-ghcr-action@v2
         with:
           token: ${{ secrets.PAT_TOKEN }}
