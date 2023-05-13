@@ -77,12 +77,20 @@ Annual server configuration takes place in the data folder, there are only data 
 
 > :warning: The server runtime "server.jar" cannot be found in this folder and is also discouraged from exchanging it!
 
+With this command you can confirm the eula if you are in the root folder of your docker compose.
+```Bash
+# Accept eula
+sed -i 's/eula=false/eula=true/g' data/eula.txt
+```
+
 ### Install plugins
 
 > :warning: Detailed documentation is in progress!
 
 If you want to install plugins you need to check with your chosen server documentation on how to install plugins.
 The plugins folder provided for this is located in the data folder.
+
+> If you use the commandline you could use wget to import a plugin directly from the internet into the plugin order!
 
 ## Update
 
