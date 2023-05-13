@@ -34,27 +34,6 @@ if __name__ == '__main__':
             for image in images:
                 pool.apply_async(image.build, (docker_client,), callback=semaphore.release)
 
-            semaphore.acquire(block=True)
-
-            """
-            single_build = lambda image: image.build(docker_client)
-
-            result = pool.map_async(single_build, images)
-        
-            result.wait()
-            result.successful()
-
-            pool.close()
-            pool.join()
-
-            ---
-            
-            results: List[AsyncResult] = []
-            for thread in threads:
-                results.append(pool.apply_async(func=thread.start))
-
-            pool.close()
-            pool.join()
-            """
+            semaphore.acquire(block=True, timeout=5.8 * 60 * 60)
 
         Image.push(docker_client)
