@@ -23,6 +23,8 @@ if __name__ == '__main__':
 
         docker_client = docker_env()                            # Connects to the docker engine
 
+        print("Start build!!!")
+
         with Pool(processes=16) as pool:
 
             semaphore = Semaphore(0)
