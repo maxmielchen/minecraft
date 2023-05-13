@@ -4,6 +4,7 @@ from docker import DockerClient
 from .env import BaseEnvironments
 
 class Image:
+    "Interacts with the Docker-Engine and can build the Minecraft images and push them as a stack"
 
     base_environments = BaseEnvironments()
 
@@ -12,6 +13,7 @@ class Image:
         self.runtime: Server = runtime
 
     def build(self, docker_client: DockerClient, instant: bool = False):
+        "Builds the minecraft image and can push it if necessary"
         builded_image, _ = docker_client.images.build(
             dockerfile="./Dockerfile",
             path=".",
@@ -31,5 +33,6 @@ class Image:
             docker_client.images.push(repository=f"{self.base_environments.get_registry()}/{self.base_environments.get_repository()}")
 
     def push(docker_client: DockerClient):
+        "Ensures that all images are pushed into a repository"
         base_environments = BaseEnvironments()
         docker_client.images.push(repository=f"{base_environments.get_registry()}/{base_environments.get_repository()}")
