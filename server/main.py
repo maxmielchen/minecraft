@@ -34,6 +34,8 @@ if __name__ == '__main__':
             for image in images:
                 pool.apply_async(image.build, (docker_client,), callback=semaphore.release)
 
-            semaphore.acquire(block=True, timeout=5.8 * 60 * 60)
+            acquire = semaphore.acquire(block=True, timeout=5.8 * 60 * 60)
+            if acquire:
+                print("Couldn't finish building!")
 
         Image.push(docker_client)
