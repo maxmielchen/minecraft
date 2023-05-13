@@ -11,11 +11,11 @@ from multiprocessing import Pool, Semaphore
 
 if __name__ == '__main__':
     with open("matrix.json") as matrix:
-        data : JSONDecoder = load(matrix)           # Loads the data stored in json
-        runtimes = RuntimePool(data)                # Gets all runtimes from the json
-        servers = ServerPool(data)                  # Gets all servers from the json
+        data : JSONDecoder = load(matrix)                       # Loads the data stored in json
+        runtimes = RuntimePool(data)                            # Gets all runtimes from the json
+        servers = ServerPool(data)                              # Gets all servers from the json
 
-        images: List[Image] = []                    # Holds all possible images
+        images: List[Image] = []                                # Holds all possible images
 
         for server in servers.get_runtimes():
             for runtime in runtimes.filtered_pool(server.get_java_version()):
