@@ -34,4 +34,4 @@ if __name__ == '__main__':
             if acquire:
                 print("Couldn't finish building!")              # Sends a message if not all images could be built
 
-        Image.push(docker_client)                               # Loads all images to the docker engine
+            Image.push(docker_client)                           # Loads all images to the docker engine
