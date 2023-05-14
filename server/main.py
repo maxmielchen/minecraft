@@ -7,11 +7,11 @@ from lib.image import Image
 from lib.runtimepool import RuntimePool
 from lib.serverpool import ServerPool
 
-from multiprocessing import Pool, Semaphore
+from multiprocessing import Pool
 
 if __name__ == '__main__':
     with open("matrix.json") as matrix:
-        data : JSONDecoder = load(matrix)                       # Loads the data stored in json
+        data: JSONDecoder = load(matrix)                        # Loads the data stored in json
         runtimes = RuntimePool(data)                            # Gets all runtimes from the json
         servers = ServerPool(data)                              # Gets all servers from the json
 
@@ -23,17 +23,18 @@ if __name__ == '__main__':
 
         docker_client = docker_env()                            # Connects to the docker engine
 
-        print("Start build!!!")
-
         with Pool(processes=16) as pool:
 
-            semaphore = Semaphore(0)
+            results = []
 
             for image in images:
-                pool.apply_async(image.build, (docker_client,), callback=semaphore.release)
+                result = pool.apply_async(image.build, (docker_client,))
+                results.append(result)
 
-            acquire = semaphore.acquire(block=True, timeout=5.8 * 60 * 60)
-            if acquire:
+            pool.close()
+            pool.join(5.8 * 60 * 60)
+
+            if not all(result.ready() for result in results):
                 print("Couldn't finish building!")              # Sends a message if not all images could be built
 
             Image.push(docker_client)                           # Loads all images to the docker engine
