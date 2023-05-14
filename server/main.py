@@ -32,7 +32,7 @@ if __name__ == '__main__':
                 results.append(result)
 
             pool.close()
-            pool.join(5.8 * 60 * 60)
+            pool.join(timeout=5.8 * 60 * 60)
 
             if not all(result.ready() for result in results):
                 print("Couldn't finish building!")              # Sends a message if not all images could be built
