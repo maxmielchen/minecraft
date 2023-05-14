@@ -40,7 +40,7 @@ if __name__ == '__main__':
             pool.close()
 
             join_semaphore = Semaphore()
-            join_process = Process(target=semaphore_join, args=(pool, join_semaphore))
+            join_process = Process(target=semaphore_join, args=(pool, join_semaphore,))
             join_process.start()
 
             join_semaphore.acquire(True, 5.8 * 60 * 60)
